@@ -1,0 +1,45 @@
+<mvc:View
+	controllerName="ZCSVFILEUPLOAD.ZCSVFILEUPLOAD.controller.Upload"
+	xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	class="viewPadding">
+	<Page showHeader="true" title="Upload CSV file" showFooter="true" showNavButton="true" navButtonPress="doNavBack">
+		<content>
+			<l:VerticalLayout>
+				<u:FileUploader
+					id="fileUploader"
+					name="fup_data"
+					uploadUrl="file_upload.xsjs"
+					tooltip="Upload new material file to the server"
+					uploadComplete="handleUploadComplete"
+					change="handleValueChange"
+					typeMissmatch="handleTypeMissmatch"
+					style="Emphasized"
+					fileType="csv"
+					placeholder="Choose a file for Upload...">
+						<u:parameters>
+							<u:FileUploaderParameter
+								name="param1"
+								value="Foo"/>
+							<u:FileUploaderParameter
+								name="param2"
+								value="bar"/>
+						</u:parameters>
+						<u:headerParameters>
+							<u:FileUploaderParameter
+								name="headerParam1"
+								value="Foo"/>
+							<u:FileUploaderParameter
+								name="headerParam2"
+								value="bar"/>
+						</u:headerParameters>
+					</u:FileUploader>
+				<Button
+					text="Upload File"
+					press="handleUploadPress"/>
+			</l:VerticalLayout>
+		</content>
+	</Page>
+</mvc:View>
