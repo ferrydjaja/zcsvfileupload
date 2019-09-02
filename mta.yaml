@@ -54,7 +54,7 @@ resources:
     type: com.sap.xs.hdi-container
     properties:
       hdi-container-name: ${service-name}
-  - name: zearnpfe-uaa
+  - name: zcsvfileupload-uaa
     type: com.sap.xs.uaa-space
     parameters:
       config-path: ./xs-security.json
